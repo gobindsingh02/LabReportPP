@@ -1,0 +1,99 @@
+[Home of Lab Report](../lab.html)
+
+# Program Ex 08: Application of if-else conditional statements
+
+## Discussion
+
+If-Else statements can be used to solve many daily life problems. One among the many problems is Body Mass Index (BMI). Everyone in this world wants to be fit. So, one needs to keep checking his/her BMI to be ensure that he/she is fit. So, for that purpose we need to make BMI calculator which asks user for his weight (in kgs) and height (in meters). For that we need to use `scanf()` function to ask user for the input. Syntax of `scanf()` function is as follows:
+`scanf("%d",&variable);`. In this you can see, we need to specify format specifier within double quotes, for the datatype of the variable in which we store the value that user enters and apmersand symbol (`&`) is used before the variable name to specify the address of the variable. 
+
+## Source file/s
+
+```
+src/.
+└── main.c
+
+0 directories, 1 file
+```
+
+---
+
+
+# src/main.c
+
+```
+
+#include <stdio.h>
+int main(void)
+{   printf("\nAnirudh Verma\nME-A1 2030009\n\n");
+    float  height,weight;
+    printf("Enter your Weight in Kgs :- ");
+    scanf("%f",&weight);
+    printf("Enter your Height in meters :- ");
+    scanf("%f",&height);
+    float  BMI=weight/(height*height);
+    printf("Your BMI is %f.\n",BMI);
+    if (BMI>30)
+    {printf("You are obese!\n\n");}
+    else if(BMI>=25)
+    {printf("You are overweight!\n\n");}
+    else if(BMI>=18.5)
+    {printf("You are normal.\n\n");}
+    else
+    {printf("You are underweight!\n\n");}
+    return 0;
+}
+
+```
+
+---
+
+## Compilation
+
+```
+xmake
+
+[ 50%]: ccache compiling.release src/main.c
+[ 75%]: linking.release ifelse_app
+[100%]: build ok!
+
+```
+
+# input.dat
+
+```
+
+80
+1.80
+
+```
+
+---
+
+
+## Execution
+```
+xmake run
+
+
+Anirudh Verma
+ME-A1 2030009
+
+Enter your Weight in Kgs :- Enter your Height in meters :- Your BMI is 24.691360.
+You are normal.
+
+
+```
+
+### Known Bugs and/or Errors:
+
+List all the known limitations / bugs and / or errors of your program.
+
+After extensively testing your program, you should be aware of (nearly) every issue it has. How does your program handle bad input? How does your program handle edge cases? This section is a space for full-disclosure; what's wrong with your program?
+
+### Lessons Learned:
+
+1. What went well
+1. What you would do differently next time
+1. How the exercise might be revised to make it clearer/more satisfying
+1. What the faculty members might have done differently to promote learning
