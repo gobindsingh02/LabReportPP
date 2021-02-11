@@ -11,7 +11,8 @@ for (intialization; condition; updatation) {
   block of statements;
 }
 ```
-Initialisation means we have to initialze 
+Initialisation means we have to initialze a variable with a initial value. Condition should be a boolean expression on the initialized variable. Updatation is for the initialised variable so that the condition is true for a no. of iterations and the condition becomes false at a point and the loop stops. So, the loop is executed till the condition is true and it condition is checked everytime before execution of block of statements and updatation is carried out at the end of execution of block of statements.  
+So, `for` loops can be used to ease the task. We need not type the statements repeatedly, so mant times. Just type once and for loop will handle it. One such example is to print multiplication table which is illustrated below.
 
 ## Source file/s
 
@@ -88,13 +89,11 @@ Enter the number of which you want to print table:- 34 *  1 = 34
 
 ### Known Bugs and/or Errors:
 
-List all the known limitations / bugs and / or errors of your program.
-
-After extensively testing your program, you should be aware of (nearly) every issue it has. How does your program handle bad input? How does your program handle edge cases? This section is a space for full-disclosure; what's wrong with your program?
+No known bugs till now.  
+Can't print multiplication table for real numbers and also not for very huge numbers.
 
 ### Lessons Learned:
 
-1. What went well
-1. What you would do differently next time
-1. How the exercise might be revised to make it clearer/more satisfying
-1. What the faculty members might have done differently to promote learning
+1. What are loops?
+2. What is `for` loop? Syntas of it.
+3. Uses of for loop.

@@ -1,33 +1,17 @@
 [Home of Lab Report](../lab.html)
 
-# Program Ex 01: Change it
+# Program Ex 13: Find factorial of a number
 
-## Flow chart
+## Discussion
 
-### Sample flow chart
+The factorial function (symbol: `!`) says to multiply all whole numbers from our chosen number down to 1.  
+**Examples:**
+  
+- 4! = 4 * 3 * 2 * 1 = 24
+- 6! = 6 * 5 * 4 * 3 * 2 * 1 = 720
+- 1! = 1
 
-You may find biggest among three numbers, by comparing systematically two numbers at a time, as shown in flowchart below:
-
-[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbjEoW1N0YXJ0XSkgLS0-IDJbXCJhIOKGkCB4PGJyLz4gYiDihpAgeTxici8-YyDihpAgejxici8-XCJdXG4yIC0tPiAze2EgPiBifVxuMyAtLT58WWVzfCA0e2EgPiBjfVxuNCAtLT58Tm98IDhbL091dHB1dCBjL11cbjQgLS0-IHxZZXN8IDZbL091dHB1dCBhL11cbjMgLS0-fE5vfCA1e2IgPiBjfVxuNSAtLT4gfE5vfCA2XG41IC0tPiB8WWVzfCA3Wy9PdXRwdXQgYi9dXG43IC0tPiA5KFtTdG9wXSlcbjYgLS0-IDlcbjggLS0-IDlcbiIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbjEoW1N0YXJ0XSkgLS0-IDJbXCJhIOKGkCB4PGJyLz4gYiDihpAgeTxici8-YyDihpAgejxici8-XCJdXG4yIC0tPiAze2EgPiBifVxuMyAtLT58WWVzfCA0e2EgPiBjfVxuNCAtLT58Tm98IDhbL091dHB1dCBjL11cbjQgLS0-IHxZZXN8IDZbL091dHB1dCBhL11cbjMgLS0-fE5vfCA1e2IgPiBjfVxuNSAtLT4gfE5vfCA2XG41IC0tPiB8WWVzfCA3Wy9PdXRwdXQgYi9dXG43IC0tPiA5KFtTdG9wXSlcbjYgLS0-IDlcbjggLS0-IDlcbiIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9)
-
-## Markdown code
-
-Markdown used at [MerMaid](https://mermaid-js.github.io/mermaid-live-editor/).
-
-```
-graph TD
-1([Start]) --> 2["a ← x<br/> b ← y<br/>c ← z<br/>"]
-2 --> 3{a > b}
-3 -->|Yes| 4{a > c}
-4 -->|No| 8[/Output c/]
-4 --> |Yes| 6[/Output a/]
-3 -->|No| 5{b > c}
-5 --> |No| 6
-5 --> |Yes| 7[/Output b/]
-7 --> 9([Stop])
-6 --> 9
-8 --> 9
-```
+Also one thing to note that factorial of 0 (`0!`) is also **1**. And factorial is not defined for real numbers other than positive integers.
 
 ## Source file/s
 
@@ -36,6 +20,32 @@ src/.
 └── main.c
 
 0 directories, 1 file
+```
+
+---
+
+
+# src/main.c
+
+```
+
+//Programmed by Anirudh Verma
+
+#include <stdio.h>
+int main(void)
+{   printf("Anirudh Verma\nME-A1 2030009\n\n");
+    long long int n;
+    unsigned long long int fact=1; //Initialising variables for storing number and factorial
+    printf("Enter a number to find it's factorial: ");
+    scanf("%lld",&n);
+    for(long long int i=2;i<=n;i++)
+      { fact*=i; } //Calculating factorial by repetitive multiplication
+    if (n>=0)
+    printf("Factorial of the given number is %lld\n",fact); //Printing factorial
+    else printf("Factorial of the given number doesn't exists\n"); //Statement for not able to calculate factorial
+    return 0;
+}
+
 ```
 
 ---
@@ -51,23 +61,34 @@ xmake
 
 ```
 
+# input.dat
+
+```
+
+11
+
+```
+
+---
+
+
 ## Execution
 ```
 xmake run
 
-hello world!
+Anirudh Verma
+ME-A1 2030009
+
+Enter a number to find it's factorial: Factorial of the given number is 39916800
 
 ```
 
 ### Known Bugs and/or Errors:
 
-List all the known limitations / bugs and / or errors of your program.
-
-After extensively testing your program, you should be aware of (nearly) every issue it has. How does your program handle bad input? How does your program handle edge cases? This section is a space for full-disclosure; what's wrong with your program?
+Can't find factorial of large numbers and gives incorrect answer for it.
 
 ### Lessons Learned:
 
-1. What went well
-1. What you would do differently next time
-1. How the exercise might be revised to make it clearer/more satisfying
-1. What the faculty members might have done differently to promote learning
+1. What is factorial?
+2. For what values factorial is defined?
+3. Learned to program a code for finding factorial of a number (if possible).

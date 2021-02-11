@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 int main(void)
-{   long long int n;
+{   printf("Anirudh Verma\nME-A1 2030009\n\n");
+    long long int n;
     unsigned long long int fact=1; //Initialising variables for storing number and factorial
     printf("Enter a number to find it's factorial: ");
     scanf("%lld",&n);
